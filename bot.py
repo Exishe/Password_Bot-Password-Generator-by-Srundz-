@@ -58,7 +58,6 @@ async def generate(message: types.Message):
     # С помощью set() устанавливаем данное состояние. Отныне наш pwd_len имеет state.
 # Создадим handler, который будет реагировать только на текущий state()
 
-'''###################################NOR EM AVELACREL##########################################'''
 @dp.message_handler(state='*', text=['<-- Назад', '/cancel'])
 async def cancel_handler(message: types.Message, state: FSMContext):
     #Разрешать пользователю отменять действие с помощью команды /cancel
@@ -70,7 +69,6 @@ async def cancel_handler(message: types.Message, state: FSMContext):
     # Cancel действие, и сообщаем об этом пользователью
     await state.finish()
     await message.reply("Чтобы сгенерировать пароль, напишите --- /generate",reply_markup=kbd1)
-'''##############################################################################################'''
 
 from password_generator import generate_normal
 @dp.message_handler(state=Pwd_State.pwd_len)
@@ -91,22 +89,3 @@ async def get_pwd_len(message: types.Message, state: FSMContext):
 if __name__ == '__main__':
     print('Password_Bot Is Ready To Use!!!!')
     executor.start_polling(dp, skip_updates=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
