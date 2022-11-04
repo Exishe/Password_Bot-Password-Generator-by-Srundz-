@@ -1,7 +1,7 @@
 '''
 1) Бот не имеет доступа к общим чатам.(Botfather->/setprivicy->Disabled)
 '''
-# from emoji import emojize
+
 import config
 import logging
 
